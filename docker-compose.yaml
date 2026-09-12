@@ -6,6 +6,10 @@ services:
       - "3001:3000"
     environment:
       - MESSAGE=Holiiiiiii
+    networks:
+      - lab-network
+    depends_on:
+      - db
   api2:
     build: ./api
     container_name: api2
@@ -13,14 +17,21 @@ services:
       - "3002:3000"
     environment:
       - MESSAGE=soy Tamara Caspito
-
+    networks:
+      - lab-network
+    depends_on:
+      - db
   api3:
     build: ./api
     container_name: api3
     ports:
       - "3003:3000"
+    networks:
+      - lab-network
     environment:
       - MESSAGE=Fin de las apis
+    depends_on:
+      - db
 
   db:  
     image: postgres:16-alpine
@@ -32,6 +43,8 @@ services:
       POSTGRES_USER: lab_user
       POSTGRES_PASSWORD: lab_password
       POSTGRES_DB: lab_db
+    networks:
+      - lab-network
     volumes:
       - db_data:/var/lib/postgresql/data
       - ./db/init:/docker-entrypoint-initdb.d
@@ -40,3 +53,8 @@ services:
 volumes:
   db_data:
     driver: local
+
+
+networks:
+  lab-network:
+    driver: bridge
