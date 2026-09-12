@@ -4,7 +4,7 @@ Desplegar servicio web + base de datos con Docker
 
 ## Stack
 API
-  - nmatsui/hello-world-api
+  - 3 copias corriendo en paralelo: api1, api2, api3 (construye la imagen desde ./api que es la api de nmatsui/hello-world-api modificada)
   - Docker
 
 BD
@@ -26,6 +26,10 @@ API_MESSAGE=...
 ```bash
 docker compose up -d
 ```
+
+## Despliegue
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/135270b5-5a24-40d0-a986-added2bd1fd0" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/626ffc38-63e5-4d02-aa39-192b614aa441" />
 
 ## Redes
 - Se usa bridge que es como crear un pequeña red privada para los contenedores, para que entre ellos se puedan comunicar (ej: api1 -habla> db) y para que algo de afuera entre se tiene que abrir un puerto (docker lo usa por defecto).
