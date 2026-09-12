@@ -5,7 +5,7 @@ services:
     ports:
       - "3001:3000"
     environment:
-      - MESSAGE=Holiiiiiii
+      - MESSAGE=${API_MESSAGE_1}
     networks:
       - lab-network
     depends_on:
@@ -16,7 +16,7 @@ services:
     ports:
       - "3002:3000"
     environment:
-      - MESSAGE=soy Tamara Caspito
+      - MESSAGE=${API_MESSAGE_2}
     networks:
       - lab-network
     depends_on:
@@ -29,7 +29,7 @@ services:
     networks:
       - lab-network
     environment:
-      - MESSAGE=Fin de las apis
+      - MESSAGE=${API_MESSAGE_3}
     depends_on:
       - db
 
@@ -40,9 +40,9 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_USER: lab_user
-      POSTGRES_PASSWORD: lab_password
-      POSTGRES_DB: lab_db
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     networks:
       - lab-network
     volumes:
