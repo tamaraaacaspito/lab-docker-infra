@@ -1,0 +1,8 @@
+services:
+  api1:
+    build: ./api
+    container_name: api1
+    ports:
+      - "3001:3000"
+    environment:
+      - MESSAGE=Holiiiiiii
