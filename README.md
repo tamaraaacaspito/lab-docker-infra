@@ -11,8 +11,7 @@ BD
   - PostgreSQL 16
 
 # Estructura
-
-
+<img width="352" height="515" alt="image" src="https://github.com/user-attachments/assets/18345ac1-349c-4f67-b34c-3af69591f486" />
 
 # Indicaciones
 
