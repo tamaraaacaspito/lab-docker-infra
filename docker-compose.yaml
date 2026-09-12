@@ -13,3 +13,11 @@ services:
       - "3002:3000"
     environment:
       - MESSAGE=soy Tamara Caspito
+
+  api3:
+    build: ./api
+    container_name: api3
+    ports:
+      - "3003:3000"
+    environment:
+      - MESSAGE=Fin de las apis
